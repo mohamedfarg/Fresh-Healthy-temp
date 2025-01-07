@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Fresh & Healthy Organic Food</title>
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Header Styling */
+header {
+    background-color: #b0c87c; /* Header background color */
+    padding: 15px 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left Section: Navigation Links */
+.header-left {
+    display: flex;
+    gap: 20px; /* Space between navigation links */
+}
+nav img {
+    padding-top: 4px;
+    height: 27px;
+}
+
+.header-left a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+}
+
+.header-left a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.header-left a:hover::after {
+    width: 100%;
+}
+
+/* Right Section: Logo and Cart/Login */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between logo and cart/login */
+}
+
+.logo img {
+    height: 29px; /* Logo height */
+    cursor: pointer;
+}
+
+.cart-login {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between cart and login */
+}
+
+.cart-login a {
+    color: white; /* Cart and login text color */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.fa-cart-shopping {
+    color: #526D35; /* Cart icon color */
+}
+.fa-cart-shopping:hover {
+    color: #ffff; /* Cart icon color */
+    transition: all .5s ease;
+}
+
+        /* Hero Section */
+.hero {
+    background-color: #dee6ce; /* Ensure this matches your desired background color */
+    padding: 80px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+    position: relative; /* Ensure the hero section is positioned correctly */
+}
+
+.hero-image {
+    width: 40%;
+    max-width: 500px;
+    animation: float 3s ease-in-out infinite; /* Apply the float animation */
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px); /* Move up */
+    }
+    100% {
+        transform: translateY(0px); /* Move back down */
+    }
+}
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero p {
+            color: #526D35;
+            font-size: 21px;
+            margin-bottom: 20px;
+            font-weight:bold ;
+        }
+
+        .hero h1 {
+            font-family: 'Rockwell', 'Clarendon', serif;
+
+            color: #526D35;
+            font-size: 71px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+    padding: 12px 24px;
+    border: 1px solid #526D35;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #526D35;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scale */
+}
+
+.btn:hover {
+    background-color: #526D35; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly increase the size */
+}
+
+.divider-section {
+    display: flex;
+    /* flex-direction: column; Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: space-between;
+    max-width: 300px;
+    margin: auto;
+}
+
+.divider-line {
+    width: 10px; /* Set the width of the divider line */
+    height: 70px; /* Adjust the height as needed */
+    background-color: #dee6ce; /* Color of the divider line */
+}
+
+/* Title Section */
+.difference-title {
+    font-family: 'Source Sans Pro', 'Proxima Nova', sans-serif;
+
+    display: inline-block;
+    background-color: #dee6ce; /* Background color for the title */
+    color: #526D35; /* Title text color */
+    padding: 20px 30px; /* Padding for the title */
+    font-size: 32px; /* Font size for the title */
+    text-align: center; /* Center the title text */
+    margin-bottom:80px ;
+}
+        /* Difference Section */
+        .difference {
+       
+            text-align: center;
+        }
+
+
+        .feature-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 120px;
+            gap: 60px;
+        }
+
+        .feature-text {
+            text-align: left;
+            color: #526D35;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 50%;
+            font-weight: bold;
+        }
+
+        .feature-image {
+            width: 40%;
+            max-width: 400px;
+        }
+
+        .best-selling {
+    padding: 80px 120px 60px;
+    text-align: center;
+    background-color: #f5f5f5;
+    position: relative;
+}
+.best-selling p {
+    text-align: left; /* Aligns the text to the left */
+    color: #444; /* Optional: Adjust text color */
+    font-size: 14px; /* Optional: Adjust font size */
+    line-height: 1.5; /* Optional: Improves readability */
+    margin: 10px 0; /* Optional: Adds spacing around the paragraph */
+}
+
+
+.best-selling h2 {
+    color: #526D35;
+    font-size: 36px;
+    margin-bottom: 100px; /* Increased to make room for floating images */
+    font-weight: bold;
+}
+.best-selling-title {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the title */
+    margin-bottom: 40px; /* Space below the title */
+}
+
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.product-card {
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+
+    background-color: #dee6ce;
+    padding: 30px 20px;
+    border-radius: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 80px; /* Space for floating image */
+    height: 450px;
+}
+
+/* Side cards */
+.product-card:first-child,
+.product-card:last-child {
+    width: 281px;
+    padding-top: 100px; /* Space for floating image */
+}
+
+/* Middle card */
+.product-card:nth-child(2) {
+    width: 322px;
+    padding-top: 122px;
+    margin-top: 40px;
+    margin-bottom: 27px;
+}
+
+.product-image {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+
+}
+
+/* Larger image for middle card */
+.product-card:nth-child(2) .product-image {
+    width: 200px;
+    height: 200px;
+    top: -80px;
+}
+img{
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2)); /* Adds a subtle shadow */
+    transition: filter 0.3s ease; /* Smooth transition for hover effect */
+}
+/* Hover effect */
+img:hover {
+    filter: drop-shadow(0 8px 13px rgba(0, 0, 0, 0.3)); /* Intensifies shadow on hover */
+}
+
+
+.product-card h3 {
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+
+    color: #526D35;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.product-card p {
+    color: #4B7330;
+    font-weight:bold ;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.stars {
+    color: #fca311;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-top: auto;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #526D35;
+    border-radius: 50%;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .products {
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .product-card,
+    .product-card:nth-child(2),
+    .product-card:first-child,
+    .product-card:last-child {
+        width: 300px;
+        margin-top: 80px;
+    }
+}
+        /* Footer */
+        footer {
+    background-color: #4B7330; /* Darker green color from the image */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+*
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 90px; /* Adjust based on your needs */
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-email {
+    color: white;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .feature-content {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .feature-text {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 12px;
+            }
+        }
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- <div class="logo">
+            </div> -->
+            <nav class="header-left">
+                <img src="imgs/6.png" alt="logo">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About us</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-right">
+                <div class="cart-login">
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#login">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <section class="hero">
+        <div class="hero-content">
+            <p>Think With Heart</p>
+            <h1>Fresh & Healthy<br>Organic Food</h1>
+            <div class="buttons">
+                <a href="#learn" class="btn">Learn More</a>
+                <a href="#shop" class="btn">Shop Now</a>
+            </div>
+        </div>
+        <img src="imgs/2.png" alt="Fresh salad bowl" class="hero-image">
+    </section>
+
+    <div class="divider-section">
+        <div class="divider-line"></div>
+
+   
+
+        <div class="divider-line"></div>
+    </div>
+
+    <section class="difference">
+        <h2 class="difference-title">Taste the Healthy Difference</h2>
+        <div class="feature-content">
+            <div class="feature-text">
+                <p>we know that time is the greatest value in the modern world. our healthy meal plan delivery service good food in healthy choice
+              we take care of your nutrition while you reach your goals every week, balanced and healthy menu and get you fresh.</p>
+            </div>
+            <img src="imgs/1.png" alt="Fruit basket" class="feature-image">
+        </div>
+    </section>
+
+    
+    <section class="best-selling">
+        <h2>Best selling items</h2>
+        <!-- <div class="best-selling-title">
+            <span class="arc-left"></span>
+            <h2>Best selling items</h2>
+            <span class="arc-right"></span> -->
+        </div>
+        <div class="products">
+            <div class="product-card">
+                <img src="imgs/4.png" alt="Orange Juice" class="product-image">
+                <h3>Orange Juice</h3>
+                <p>salad is nutritionally complete food that contains all 27 essential vitamins and minerals protein, essential fatty acid, carbs, fibre and phytonutrients.</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="product-card">
+                <img src="imgs/5.png" alt="Healthy Salad" class="product-image">
+                <h3>Healthy salad</h3>
+                <p>salad is nutritionally complete food that contains all 27 essential vitamins and minerals protein, essential fatty acid, carbs, fibre and phytonutrients.</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="product-card">
+                <img src="imgs/3.png" alt="Fruit Salad" class="product-image">
+                <h3>Fruit Salad</h3>
+                <p>salad is nutritionally complete food that contains all 27 essential vitamins and minerals protein, essential fatty acid, carbs, fibre and phytonutrients.</p>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="imgs/logo.png" alt="Healthy Choice Logo">
+            </div>
+            <div class="social-links">
+                <a href="#facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="footer-email">support@healthychoice.com</p>
+            <nav class="footer-nav">
+                <a href="#home">HOME</a>
+                <a href="#about">ABOUT US</a>
+                <a href="#menu">MENU</a>
+                <a href="#contact">CONTACT US</a>
+            </nav>
+            <p class="copyright">Copyright © 2022 kuyalabtar</p>
+        </div>
+    </footer>
+</body>
+</html>
